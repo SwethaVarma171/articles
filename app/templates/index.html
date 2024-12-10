@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <style>
+        *{
+            margin: 0px;
+            padding: 0px;
+            box-sizing: border-box;
+        }
+        body{
+            background-color: aquamarine;
+        }
+        nav{
+            display: flex;
+            gap: 50px;
+            height: 80px;
+            width: 100%;
+            background-color: black;
+            color: white;
+            list-style: none;
+            justify-content: center;
+            align-items: center;
+
+        }
+        a{
+            text-decoration: none;
+        }
+    </style>
+
+    <nav>
+        <li style="margin-left: 10%;">My Blogs</li>
+        <li>Home</li>
+        <li>About</li>
+        <li>Search</li>
+        <li><button>sign in</button></li>
+    </nav> <br><br><br>
+    <center>
+        <h1>TODAY'S ARTICLES</h1> <br><br><br>
+
+
+{% for i in data %}
+<a href="{% url 'details' i.id %}"><p>{{i.title}}</p></a><br>
+<p>{{i.description}}</p>
+{% endfor %}
+</center>
+</body>
+</html>
